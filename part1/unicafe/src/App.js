@@ -5,26 +5,27 @@ const Button = ({onClick, text}) => <button onClick={onClick}> {text} </button>;
 const statsTotal = (arr) => {
   let Sum = 0;
   for (let i = 0; i < arr.length ; i++) {
-    Sum += arr[i]
+    Sum += arr[i];
   };
-  return Sum
+  return Sum;
 };
 
 const statsRatingAvg = (arr) => (arr[0] - arr[2]) / statsTotal(arr);
 
-const statsRatingPositive = (arr) => (arr[0] / statsTotal(arr)) * 100 + '%'
+const statsRatingPositive = (arr) => (arr[0] / statsTotal(arr)) * 100 + '%';
 
-const StatisticLine = ({text, value}) => 
+const StatisticLine = ({text, value}) => (
   <tr> 
     <td> {text} </td> 
     <td> {value} </td> 
-  </tr>;
+  </tr>
+);
 
 const Statistics = (props) => {
   if (props.valueGoodZero === 0 && props.valueNeutralZero === 0 && props.valueBadZero === 0) {
     return (
       <div>
-        No feedback has been given. 
+        <p> No feedback has been given. </p> 
       </div>
     )
   } else {
@@ -40,7 +41,7 @@ const Statistics = (props) => {
       </table>
     )
   }
-}
+};
 
 
 function App() {
