@@ -7,7 +7,7 @@ const AnecVote = ({text, count}) => (
   </div>
 );
 
-const Button = (props) => <button onClick={props.onClick}> {props.text} </button>;
+const Button = ({onClick, text}) => <button onClick={onClick}> {text} </button>;
 
 //rng but doesn't generate max 
 const rng = (max) => Math.floor(Math.random() * max);
